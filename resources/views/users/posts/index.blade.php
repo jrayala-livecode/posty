@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="flex justify-center">
     <div class="flex justify-center">
         <div class=" w-8/12 bg-white p-6 rounded-lg">
             <h1 class="mb-4">
-                Dashboard
+                {{ $user->name }}
             </h1>
             <div class="">
                 @if ($posts->count())
@@ -16,4 +17,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

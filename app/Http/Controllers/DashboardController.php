@@ -9,8 +9,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
-        $posts = Post::orderBy('created_at','desc')->with(['user','likes'])->paginate(2);
+        $posts = Post::latest()->with(['user','likes'])->paginate(2);
+        
         return view('posts.dashboard',[
             'posts' => $posts
         ]);
